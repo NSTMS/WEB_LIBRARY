@@ -1,0 +1,51 @@
+﻿@import "reset.css";
+
+#form1 {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    margin: auto;
+    margin-top: 200px;
+    gap: 10px;
+    border: 3px solid rgba(28, 28, 42,1);
+    color: rgba(28, 28, 42,1);
+    padding: 20px;
+}
+h2 {
+    font-size: 35px !important;
+    all: revert;
+    text-align: center;
+    padding: 10px;
+}
+span {
+    width: 100px;
+    padding: 10px;
+    text-align: left;
+    font-weight:600;
+}
+input {
+    width: 120px;
+    padding-left: 3px;
+    border-bottom: 2px solid rgba(28, 28, 42,1);
+
+}
+input[type="submit"] {
+    border: 2px solid rgba(28, 28, 42,1);
+    display:flex;
+    justify-content:center;
+    margin:auto;
+    padding:10px;
+    margin-top:20px;
+    margin-bottom:30px;
+    }
+    input[type="submit"]:hover {
+        cursor: pointer;
+        background-color: rgba(28, 28, 42,1);
+        color:white;
+        transition:0.2s linear;
+    }
+    div {
+        display: flex;
+    }
