@@ -1,8 +1,6 @@
 
 # WEB LIBRARY konfiguracja
 
----
-
 1. #### XAMPP
     - Jeśli nie posiadasz programu ***XAMPP***, pobierz go z [tej strony](https://www.apachefriends.org/pl/download.html) 
     - uruchom XAMPP'a
