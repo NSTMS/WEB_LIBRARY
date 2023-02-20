@@ -57,8 +57,9 @@ namespace WEB_LIBRARY
         {
             try
             {
-                string senderEmail = "";
-                string senderPassword = "";
+                // DO SAMODZIELNEJ EDYCJI 
+                string senderEmail = ""; // E-MAIL WYSYŁAJĄCY MAILE WERYFIKACYJNE 
+                string senderPassword = ""; // CIĄG ZNAKÓW POBRANY ZE STRONY https://myaccount.google.com/apppasswords dla tej aplikacji
 
                 MailMessage message = new MailMessage(senderEmail, Application.Get("user_email").ToString());
                 message.Subject = "Verification Code";
