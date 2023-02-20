@@ -9,6 +9,8 @@ using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 using System.Collections;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace WEB_LIBRARY
 {
@@ -34,8 +36,7 @@ namespace WEB_LIBRARY
         }
         protected void logUser(object sender, EventArgs e)
         {
-            Application.Set("username", userTb.Text);
-            checkLoginData(Application.Get("username").ToString(), passwordTb.Text);
+            checkLoginData(userTb.Text, passwordTb.Text);
         }
         protected void checkLoginData(string login, string password)
         {
@@ -51,7 +52,12 @@ namespace WEB_LIBRARY
                     MySqlConnection selectConnection = new dataBaseConnection().connect();
                     if (selectConnection == null) return;
                     var select = selectConnection.CreateCommand();
-                    select.CommandText = $"SELECT user, password FROM `logins` WHERE user='{login}' AND password='{password}'";
+                    string inputString = password;
+                    SHA256 sha256 = SHA256.Create();
+                    byte[] inputBytes = Encoding.ASCII.GetBytes(inputString);
+                    byte[] hashedBytes = sha256.ComputeHash(inputBytes);
+                    string hashed_password = BitConverter.ToString(hashedBytes).Replace("-", "");
+                    select.CommandText = $"SELECT user, password FROM `logins` WHERE user='{login}' AND password='{hashed_password}'";
                     MySqlDataReader reader = select.ExecuteReader();
                     string userData = "";
                     while (reader.Read())

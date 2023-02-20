@@ -25,7 +25,11 @@
         </div> 
         <div>
             <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-            <asp:TextBox ID="passwordTb" runat="server"></asp:TextBox>
+            <asp:TextBox ID="passwordTb" runat="server" TextMode="Password"></asp:TextBox>
+        </div>
+        <div>
+            <asp:Label ID="Label4" runat="server" Text="Email"></asp:Label>
+            <asp:TextBox ID="emailTb" runat="server"></asp:TextBox>
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="addUser" Text="Sign In" />
          <asp:Label ID="info" runat="server" Text=""></asp:Label>

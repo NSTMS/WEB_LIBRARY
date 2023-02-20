@@ -10,7 +10,6 @@
         <h3 >Web Library</h3>
     </nav >
     <form id="form1" runat="server">
-
         <h2>connection</h2>
         <div>
             <asp:TextBox ID="serverTb" runat="server" placeholder="server">localhost</asp:TextBox>
@@ -28,6 +27,7 @@
             <asp:TextBox ID="passwordTb" runat="server" placeholder="password"></asp:TextBox>
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="connectToDbBtn" Text="connect" />
+        <asp:Label ID="info" runat="server" Text=""></asp:Label>
     </form>
 </body>
 </html>

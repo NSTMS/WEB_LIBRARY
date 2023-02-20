@@ -7,6 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>login page</title>
     <link href="css/main.css" rel="stylesheet" />
+    <style>
+        #form1{
+            border-radius:15px;
+        }
+    </style>
 </head>
 <body>
  <nav>
@@ -23,7 +28,7 @@
          <asp:TextBox ID="userTb" runat="server" placeholder="Login"></asp:TextBox>
      </div>            
      <div>
-        <asp:TextBox ID="passwordTb" runat="server" placeholder="Password"></asp:TextBox>
+        <asp:TextBox ID="passwordTb" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
      </div>
     <asp:Label ID="info" runat="server" Text=""></asp:Label>
     <asp:Button ID="Button1" runat="server" OnClick="logUser" Text="Login" />

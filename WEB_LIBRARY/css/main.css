@@ -12,6 +12,7 @@
     border: 3px solid rgba(28, 28, 42,1);
     color: rgba(28, 28, 42,1);
     padding: 20px;
+    border-radius:15px;
 }
 
 h2 {

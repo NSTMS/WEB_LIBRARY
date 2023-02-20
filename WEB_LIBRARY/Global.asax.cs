@@ -12,12 +12,15 @@ namespace WEB_LIBRARY
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            Application.Add("username", "");
+            Application.Add("user_email", "");
+            Application.Add("user_verification_code", "");
+
             Application.Add("host", "");
             Application.Add("port", "");
             Application.Add("database", "");
             Application.Add("database_user", "");
             Application.Add("database_password", "");
-            Application.Add("username", "");
             Application.Add("authorToChange", "");
             Application.Add("titleToChange", "");
             Application.Add("currentRecordId", "");
@@ -32,6 +35,9 @@ namespace WEB_LIBRARY
 
         protected void Session_End(object sender, EventArgs e)
         {
+            Application.Add("user_verification_code", "");
+
+            Application.Set("user_email", "");
             Application.Set("host", "");
             Application.Set("port", "");
             Application.Set("database", "");

@@ -13,14 +13,19 @@ namespace WEB_LIBRARY
         protected void connectToDbBtn(object sender, EventArgs e)
         {
             var connection = new dataBaseConnection(serverTb.Text, portTb.Text, databaseTb.Text, userTb.Text, passwordTb.Text);
-            if (connection.connect() != null)
+            if (connection.connect() != null && databaseTb.Text == "library")
             {
+                info.Text = "";
                 Application.Set("host", serverTb.Text);
                 Application.Set("port", portTb.Text);
                 Application.Set("database", databaseTb.Text);
                 Application.Set("database_user", userTb.Text);
                 Application.Set("database_password", passwordTb.Text);
                 Response.Redirect("userLoginFormPage.aspx");
+            }
+            else
+            {
+                info.Text = "invalid data";
             }
         }
     }

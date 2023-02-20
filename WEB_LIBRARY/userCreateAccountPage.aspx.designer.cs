@@ -78,6 +78,24 @@ namespace WEB_LIBRARY
         protected global::System.Web.UI.WebControls.TextBox passwordTb;
 
         /// <summary>
+        /// Kontrolka Label4.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+
+        /// <summary>
+        /// Kontrolka emailTb.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox emailTb;
+
+        /// <summary>
         /// Kontrolka Button1.
         /// </summary>
         /// <remarks>
