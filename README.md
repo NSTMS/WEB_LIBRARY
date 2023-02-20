@@ -2,12 +2,13 @@
 # WEB LIBRARY konfiguracja
 
 1. #### XAMPP
-    - Jeśli nie posiadasz programu ***XAMPP***, pobierz go z [tej strony](https://www.apachefriends.org/pl/download.html) 
+    - Jeśli nie posiadasz programu ***XAMPP***, pobierz go ze strony [apachefriends.org](https://www.apachefriends.org/pl/download.html) 
     - uruchom XAMPP'a
     - włącz serwery: ***Apache*** i ***MySql*** przyciskami [ **Start** ]
     - przejdź na stronę [phpmyadmin](http://localhost/phpmyadmin/)
     - utwórz nową bazę danych o dowolnej nazwie
     - zaimportuj plik `library.sql` do utworzonej bazy
+    - domyślnie jest możliwość zalogowania się przy użyciu loginu: ***test*** oraz hasła: ***test***
 2. #### VISUAL STUDIO
     - otwórz projekt w edytorze ***Visual Studio***
     - w zakładce  na górnym pasku wbierz ***Narzędzia*** >
@@ -17,3 +18,6 @@
 
 
 ### Projekt jest gotowy do uruchomienia!
+
+**UWAGA!**
+By umożliwić wykonanie weryfikacji dwuetapowej w kodzie pliku `twoStepVerificationPage.aspx.cs` w metodzie `SendVerificationCodeByEmail` ustaw zmienne `senderEmail`na e-mail, z którego będziemy wysyłać kod weryfikacyjny oraz `senderPassword` na ciąg znaków wygenerowany na stronie [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
