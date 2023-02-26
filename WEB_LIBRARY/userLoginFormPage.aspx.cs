@@ -32,6 +32,8 @@ namespace WEB_LIBRARY
                 HyperLink2.Text = "";
                 form1.Visible = true;
                 HyperLink2.Visible = false;
+                Application.Set("user_verification_code", "");
+                Application.Set("visibility", false);
             }
         }
         protected void logUser(object sender, EventArgs e)

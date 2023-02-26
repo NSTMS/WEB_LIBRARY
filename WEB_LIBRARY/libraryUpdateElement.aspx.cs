@@ -12,9 +12,6 @@ namespace WEB_LIBRARY
 {
     public partial class libraryUpdateElement : System.Web.UI.Page
     {
-
-
-  
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Application.Get("host").ToString() == "")
@@ -38,19 +35,18 @@ namespace WEB_LIBRARY
                 Label1.Text = "";
                 form1.Visible = true;
                 HyperLink2.Visible = false;
+                if (Application.Get("fromPage").ToString() == "userView") HyperLink1.NavigateUrl="~/userViewPage.aspx";
+                else if (Application.Get("fromPage").ToString() == "searchView") HyperLink1.NavigateUrl = "~/librarySearchElement.aspx";
+                titleTb.Text = Application.Get("titleToChange").ToString();
+                authorTb.Text = Application.Get("authorToChange").ToString();
+                relaseDatetb.Text = Application.Get("dateToChange").ToString();
+                ISBNtb.Text = Application.Get("ISBNToChange").ToString();
+                formatTb.Text = Application.Get("formatToChange").ToString();
+                pagesTb.Text = Application.Get("pagesToChange").ToString();
+                descTb.Text = Application.Get("descToChange").ToString();
             }
         }
 
-        protected void Page_LoadComplete(object sender, EventArgs e)
-        {
-            titleTb.Text = Application.Get("titleToChange").ToString();
-            authorTb.Text = Application.Get("authorToChange").ToString();
-            relaseDatetb.Text = Application.Get("dateToChange").ToString();
-            ISBNtb.Text = Application.Get("ISBNToChange").ToString();
-            formatTb.Text = Application.Get("formatToChange").ToString();
-            pagesTb.Text = Application.Get("pagesToChange").ToString();
-            descTb.Text = Application.Get("descToChange").ToString();
-        }
         protected void sumbitChanges(object sender, EventArgs e)
         {
             Application.Set("test", titleTb.Text);
@@ -85,9 +81,19 @@ namespace WEB_LIBRARY
                   "', Description='" + descTb.Text +
                   "' WHERE ID='" + Application.Get("currentRecordId") + "'";
 
-                        command.ExecuteNonQuery();
-                        connection.Close();
-                        Response.Redirect("userViewPage.aspx");
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                Application.Set("authorToChange", authorTb.Text);
+                Application.Set("titleToChange", titleTb.Text);
+                Application.Set("dateToChange", relaseDatetb.Text);
+                Application.Set("ISBNToChange", ISBNtb.Text);
+                Application.Set("formatToChange", formatTb.Text);
+                Application.Set("pagesToChange", Convert.ToInt32(pagesTb.Text));
+                Application.Set("descToChange", descTb.Text);
+
+                if (Application.Get("fromPage").ToString() == "userView") Response.Redirect("userViewPage.aspx");
+                else if(Application.Get("fromPage").ToString() == "searchView") Response.Redirect("librarySearchElement.aspx");
             }
             else
             {

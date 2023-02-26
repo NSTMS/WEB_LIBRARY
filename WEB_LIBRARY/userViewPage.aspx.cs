@@ -37,6 +37,27 @@ namespace WEB_LIBRARY
                 info.Text = "";
                 form1.Visible = true;
                 HyperLink2.Visible = false;
+                Application.Set("authorToChange", "");
+                Application.Set("titleToChange", "");
+                Application.Set("currentRecordId", "");
+                Application.Set("titleToChange", "");
+                Application.Set("authorToChange", "");
+                Application.Set("dateToChange", "");
+                Application.Set("ISBNToChange", "");
+                Application.Set("formatToChange", "");
+                Application.Set("pagesToChange", "");
+                Application.Set("descToChange", "");
+                Application.Set("fromPage", "userView");
+
+                Application.Set("authorToLoad", "");
+                Application.Set("titleToLoad", "");
+                Application.Set("authorToLoad", "");
+                Application.Set("dateToLoad", "");
+                Application.Set("ISBNToLoad", "");
+                Application.Set("formatToLoad", "");
+                Application.Set("pagesToLoad", "");
+                Application.Set("descToLoad", "");
+
                 showData();
             }
         }
@@ -86,7 +107,6 @@ namespace WEB_LIBRARY
             Application.Set("pagesToChange", values[6]);
             Application.Set("descToChange", values[7]);
             Response.Redirect("libraryUpdateElement.aspx");
-            showData();
         }
 
         protected void showData()

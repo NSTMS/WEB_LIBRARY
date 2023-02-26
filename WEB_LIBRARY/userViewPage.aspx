@@ -28,7 +28,6 @@
                             <div class="actions">
                                        <asp:LinkButton ID="delete" Text="delete" runat="server" CommandArgument='<%# Eval("Id") %>' OnClick="deleteRecord"></asp:LinkButton> | 
                             <asp:LinkButton ID="update" Text="update" runat="server" CommandArgument='<%# Eval("Id")+","+Eval("Authors")+","+Eval("Title")+","+Eval("RelaseDate")+","+Eval("ISBN")+","+Eval("Format")+","+Eval("Pages")+","+Eval("Description") %>' OnClick="updateRecord"></asp:LinkButton>
-                       
                             </div>
                       </ItemTemplate>
                     </asp:TemplateField>

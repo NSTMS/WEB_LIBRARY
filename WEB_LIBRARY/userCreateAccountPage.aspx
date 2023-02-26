@@ -7,6 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>create account</title>
     <link href="css/main.css" rel="stylesheet" />
+    <style>
+        #Panel1{
+            display:flex;
+            flex-direction:column;
+        }
+    </style>
 </head>
 <body>
      <nav>
@@ -31,7 +37,19 @@
             <asp:Label ID="Label4" runat="server" Text="Email"></asp:Label>
             <asp:TextBox ID="emailTb" runat="server"></asp:TextBox>
         </div>
-        <asp:Button ID="Button1" runat="server" OnClick="addUser" Text="Sign In" />
+        <div>
+
+        </div>
+        <asp:Panel ID="Panel1" runat="server">
+            <div>
+                <asp:Label ID="Label5" runat="server" Text="Code"></asp:Label>
+                <asp:TextBox ID="codeTb" runat="server"></asp:TextBox>
+            </div>
+
+            <asp:Button ID="Button2" runat="server" OnClick="addUser" Text="add account!" />
+
+        </asp:Panel>
+        <asp:Button ID="Button1" runat="server" OnClick="verifyUser" Text="Sign In" />
          <asp:Label ID="info" runat="server" Text=""></asp:Label>
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/userLoginFormPage.aspx">back</asp:HyperLink>
     </form>

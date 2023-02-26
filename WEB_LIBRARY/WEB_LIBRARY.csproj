@@ -114,7 +114,6 @@
     <Content Include="libraryUpdateElement.aspx" />
     <Content Include="css\main.css" />
     <Content Include="css\reset.css" />
-    <Content Include="twoStepVerificationPage.aspx" />
     <Content Include="userCreateAccountPage.aspx" />
     <Content Include="userLoginFormPage.aspx" />
     <Content Include="userViewPage.aspx" />
@@ -154,13 +153,6 @@
       <DependentUpon>libraryUpdateElement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="twoStepVerificationPage.aspx.cs">
-      <DependentUpon>twoStepVerificationPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="twoStepVerificationPage.aspx.designer.cs">
-      <DependentUpon>twoStepVerificationPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="userCreateAccountPage.aspx.cs">
       <DependentUpon>userCreateAccountPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
