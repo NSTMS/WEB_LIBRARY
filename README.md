@@ -20,4 +20,4 @@
 ### Projekt jest gotowy do uruchomienia!
 
 **UWAGA!**
-By umożliwić wykonanie weryfikacji dwuetapowej w kodzie pliku `twoStepVerificationPage.aspx.cs` w metodzie `SendVerificationCodeByEmail` ustaw zmienne `senderEmail`na e-mail, z którego będziemy wysyłać kod weryfikacyjny oraz `senderPassword` na ciąg znaków wygenerowany na stronie [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+By umożliwić wykonanie weryfikacji dwuetapowej w kodzie pliku `userCreateAccountPage.aspx.cs` w metodzie `SendVerificationCodeByEmail` ustaw zmienne `senderEmail`na e-mail, z którego będziemy wysyłać kod weryfikacyjny oraz `senderPassword` na ciąg znaków wygenerowany na stronie [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
