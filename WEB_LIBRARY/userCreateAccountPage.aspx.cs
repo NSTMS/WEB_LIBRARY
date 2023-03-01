@@ -130,14 +130,23 @@ namespace WEB_LIBRARY
                 string senderEmail = "";
                 string senderPassword = "";
 
-                MailMessage message = new MailMessage(senderEmail, Application.Get("user_email").ToString());
-                message.Subject = "Verification Code";
-                message.Body = $"Your verification code is: {code}";
+                if (senderEmail != "" && senderPassword != "")
+                {
+                    MailMessage message = new MailMessage(senderEmail, Application.Get("user_email").ToString());
+                    message.Subject = "Verification Code";
+                    message.Body = $"Your verification code is: {code}";
 
-                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                client.EnableSsl = true;
-                client.Credentials = new NetworkCredential(senderEmail, senderPassword);
-                client.Send(message);
+                    SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                    client.EnableSsl = true;
+                    client.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                    client.Send(message);
+                }
+                else
+                {
+                    info.Text = "Insert mail sender data";
+                }
+
+
             }
             catch (Exception ex)
             {

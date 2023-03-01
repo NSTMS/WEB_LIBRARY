@@ -14,6 +14,7 @@ namespace WEB_LIBRARY
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack) return; 
             if (Application.Get("host").ToString() == "")
             {
                 Label1.Text = "You weren't connected to the database!";
@@ -72,18 +73,6 @@ namespace WEB_LIBRARY
                 && descTb.Text != ""
                 )
             {
-                command.CommandText = "UPDATE `books` SET Authors='" + authorTb.Text +
-                  "', Title='" + titleTb.Text +
-                  "', RelaseDate='" + relaseDatetb.Text +
-                  "', ISBN='" + ISBNtb.Text +
-                  "', Format='" + formatTb.Text +   
-                  "', Pages='" + Convert.ToInt32(pagesTb.Text) +
-                  "', Description='" + descTb.Text +
-                  "' WHERE ID='" + Application.Get("currentRecordId") + "'";
-
-                command.ExecuteNonQuery();
-                connection.Close();
-
                 Application.Set("authorToChange", authorTb.Text);
                 Application.Set("titleToChange", titleTb.Text);
                 Application.Set("dateToChange", relaseDatetb.Text);
@@ -92,8 +81,20 @@ namespace WEB_LIBRARY
                 Application.Set("pagesToChange", Convert.ToInt32(pagesTb.Text));
                 Application.Set("descToChange", descTb.Text);
 
-                if (Application.Get("fromPage").ToString() == "userView") Response.Redirect("userViewPage.aspx");
-                else if(Application.Get("fromPage").ToString() == "searchView") Response.Redirect("librarySearchElement.aspx");
+                command.CommandText = "UPDATE `books` SET Authors='" + authorTb.Text +
+                  "', Title='" + titleTb.Text +
+                  "', RelaseDate='" + relaseDatetb.Text +
+                  "', ISBN='" + ISBNtb.Text +
+                  "', Format='" + formatTb.Text +
+                  "', Pages='" + Convert.ToInt32(pagesTb.Text) +
+                  "', Description='" + descTb.Text +
+                  "' WHERE ID=" + Application.Get("currentRecordId").ToString();
+
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                if (Application.Get("fromPage").ToString() == "searchView") Response.Redirect("~/librarySearchElement.aspx");
+                else Response.Redirect("~/userViewPage.aspx");
             }
             else
             {
