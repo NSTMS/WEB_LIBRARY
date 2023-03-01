@@ -13,7 +13,7 @@ namespace WEB_LIBRARY
         protected void connectToDbBtn(object sender, EventArgs e)
         {
             var connection = new dataBaseConnection(serverTb.Text, portTb.Text, databaseTb.Text, userTb.Text, passwordTb.Text);
-            if (connection.connect() != null && databaseTb.Text == "library")
+            if (connection.connect() != null)
             {
                 info.Text = "";
                 Application.Set("host", serverTb.Text);
