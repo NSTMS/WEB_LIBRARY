@@ -18,6 +18,8 @@
 
 
 ### Projekt jest gotowy do uruchomienia!
+Po odpaleniu projektu przejdź do strony `/connection.aspx` i zacznij korzytsać z aplikacji!
+
 
 **UWAGA!**
 By umożliwić wykonanie weryfikacji dwuetapowej w kodzie pliku `userCreateAccountPage.aspx.cs` w metodzie `SendVerificationCodeByEmail` ustaw zmienne `senderEmail`na e-mail, z którego będziemy wysyłać kod weryfikacyjny oraz `senderPassword` na ciąg znaków wygenerowany na stronie [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
