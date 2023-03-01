@@ -18,7 +18,7 @@
 
 
 ### Projekt jest gotowy do uruchomienia!
-Po odpaleniu projektu przejdź do strony `/connection.aspx` i zacznij korzytsać z aplikacji!
+Po odpaleniu projektu przejdź do strony `/connection.aspx` i zacznij korzystać aplikacji!
 
 
 **UWAGA!**
